@@ -16,7 +16,7 @@ can be linearised to
 
 We provide two scripts that handle the conversion, one for each direction. The idea for linearisation was originally presented by 
 [Andreas et al., 2013.](http://people.eecs.berkeley.edu/~jda/papers/avc_smt_semparse.pdf)
-Thus, the code in this repo is a modified version of their repo [smt-semparse](https://github.com/jacobandreas/smt-semparse) and additionally contains NLmaps specific components.
+Thus, some code in this repo closely resembles code from their repo [smt-semparse](https://github.com/jacobandreas/smt-semparse) but has been modified for the NLmaps corpus.
 
 To linearise a file of NLmaps queries, use:
 
@@ -39,3 +39,7 @@ and to validate at the answer level, use:
 ``python eval.py -i suggested_answers_file -g gold_answers_file``
 
 To validate at the answer level, an instance of the OpenStreetMap database needs to be [installed](http://wiki.openstreetmap.org/wiki/Overpass_API/Installation#Populating_the_DB) as well as [overpass-nlmaps](https://github.com/carhaas/overpass-nlmaps).
+
+Answers can then be generated usin
+
+``./query_db -d $DB_DIR -a answer_file -f query_file``
